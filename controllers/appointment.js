@@ -40,10 +40,18 @@ exports.bookAppointment = async (req, res) => {
 
 exports.getMyAppointments = async (req, res) => {
   try {
-    console.log(req.body,req.query)
+    // console.log(req.query)
+    const statuses = req.query.status.split(',').map(status => status);
+
+
+    console.log("Processed statuses:", statuses);
     let status = req.query.status;
-    status = status.toUpperCase();
-    let appointments = await Appointment.find({ user: req.user.userId,isDeleted:false, status })
+    // status = status.toUpperCase();
+    let appointments = await Appointment.find({ user: req.user.userId,isDeleted:false, 
+      status:{
+        $in:statuses
+      }
+    })
       .populate({
         path: "jyotis",
         select: "name email image",

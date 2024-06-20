@@ -35,6 +35,7 @@ const appointmentSchema = new Schema(
         "cancelled",
       ],
       default: "PENDING" || "pending",
+      lowercase:true
     },
     bookingSlot: {
         type: String,
