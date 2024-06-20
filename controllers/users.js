@@ -13,6 +13,7 @@ const Order = require("../models/orders");
 exports.signup = async (req, res) => {
   const { mobileNumber, countryCode } = req.body;
   try {
+    console.log(req.body)
     let user = await userModel.findOne({ mobileNumber: mobileNumber,countryCode:countryCode });
     if (!user) {
       user = new userModel({ mobileNumber, countryCode});
