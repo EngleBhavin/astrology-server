@@ -38,11 +38,19 @@ exports.signup = async (req, res) => {
 
 exports.authenticate = async (req, res) => {
   let { mobileNumber, countryCode, otp } = req.body;
+  console.log(req.body);
   try {
+    // console.log(await userModel.find())
     let user = await userModel.findOne({
-      mobileNumber,
-      countryCode,
+      mobileNumber: mobileNumber,
+
+      countryCode: countryCode,
+      isDeleted: false,
     });
+    // console.log(user);
+    // if (!user) {
+    //   return res.status(404).json({ message: "User not found" });
+    // }
     if (otp !== "555555") {
       if (!user) {
         return res.status(404).json({ message: "User not found" });
@@ -270,12 +278,13 @@ exports.getMostproductsPurchasedUsers = async (req, res) => {
       {
         path: "userId",
         select: "firstName lastName email",
-      }
+      },
     ]);
     return res
       .status(200)
       .json({ message: "Users fetched successfully", orders });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: error.message });
   }
-
-  catch (error) { console.error(error); return res.status(500).json({ message: error.message }); } 
-}
+};
