@@ -39,6 +39,8 @@ router.post(
   newFeature.updateFeature,
 )
 router.get('/new-features', [authenticateToken], newFeature.getFeatures)
+router.get('/get-new-feature/:id',
+  [authenticateToken, checkAdmin],newFeature.getSingleFeature)
 
 // About Us
 router.get('/about-us', [authenticateToken], newFeature.getAboutUs)

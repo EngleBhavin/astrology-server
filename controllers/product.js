@@ -80,7 +80,7 @@ exports.updateProduct = async (req, res) => {
       SKU,
       isDeleted,
     } = req.body
-    console.log(req.body)
+    // console.log(req.body)
     const id = req.params.id
     let product = await Product.findById(id)
 

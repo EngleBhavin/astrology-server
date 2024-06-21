@@ -46,6 +46,15 @@ exports.getFeatures = async (req, res) => {
   }
 }
 
+exports.getSingleFeature = async (req,res)=>{
+  try {
+    const feature = await newFeature.findOne({_id:req.params.id, isDeleted: false })
+    return res.status(200).json({ feature })
+  } catch (error) {
+    console.error(error)
+    return res.status(500).json({ message: error.message })
+  }
+}
 // About Us
 
 exports.addAboutUs = async (req, res) => {
