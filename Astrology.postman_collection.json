@@ -1,0 +1,3653 @@
+{
+	"info": {
+		"_postman_id": "e84a7f9f-3921-429c-9110-3fddc22f51d3",
+		"name": "Astrology",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23429051"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"mobileNumber\":\"8423292659\",\r\n  \"countryCode\":\"+91\",\r\n    \"otp\":\"134416\"\r\n\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/user/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Kuldeep\",\r\n    \"lastName\":\"Kumar\",\r\n    \"email\":\"kuldeep@techaronic.com\",\r\n    \"gender\":\"male\",\r\n    \"dateOfBirth\":\"03-02-2002\",\r\n    \"address\":{\r\n        \"city\":\"A'Bad\",\r\n        \"state\":\"Gujarat\",\r\n        \"street\":\"ahdsskhfer8 nuhdsfksfk\",\r\n        \"pincode\":\"380058\",\r\n        \"nationality\":\"Indian\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/user/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/user/get",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HoroScope",
+			"item": [
+				{
+					"name": "Get Horoscope",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/horoscope/get",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"horoscope",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Single horoscope",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/horoscope/get/6433e7c7da56c94e83999da1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"horoscope",
+								"get",
+								"6433e7c7da56c94e83999da1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/horoscope/get-horoscope-category",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"horoscope",
+								"get-horoscope-category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cards",
+			"item": [
+				{
+					"name": "Get Cards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/card/get-cards",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"card",
+								"get-cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get card by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/card/get-card/6433f4dbe316ed5db2fe4050",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"card",
+								"get-card",
+								"6433f4dbe316ed5db2fe4050"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/products/get-all",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/products/get/642d4e71a106490c3f29959c",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"get",
+								"642d4e71a106490c3f29959c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/products/get-by-category/642d3844e12daca5c57e367b",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"get-by-category",
+								"642d3844e12daca5c57e367b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by sub category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/get-by-subcategory/642d3e5d26fd9873fa07805f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"get-by-subcategory",
+								"642d3e5d26fd9873fa07805f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get New Arrivals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/products/get-new-arrivals",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"get-new-arrivals"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get New Arrivals",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/products/get-new-arrivals",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"get-new-arrivals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12-8+L+WG59yYKoDJwk5xjFcEC82cw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 15:19:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productData\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Carousel Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/products/get-carousel-products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"get-carousel-products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/products/get-carousel-products",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"get-carousel-products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2824"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b08-Qq9ZSF4pAJVTO5SdpLFWOyPnWec\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 15:50:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"products\": [\n        {\n            \"_id\": \"642d4e71a106490c3f29959c\",\n            \"image\": [],\n            \"inStock\": true,\n            \"isDeleted\": false,\n            \"name\": \"Bangles\",\n            \"description\": \"This is a simple description about the bangles\",\n            \"category\": {\n                \"_id\": \"642d3844e12daca5c57e367b\",\n                \"isDeleted\": false,\n                \"description\": \"This is a simple description\",\n                \"createdAt\": \"2023-04-05T08:58:44.693Z\",\n                \"updatedAt\": \"2023-04-05T09:08:46.318Z\",\n                \"__v\": 0,\n                \"image\": \"https://helo-app-1.s3.ap-south-1.amazonaws.com/images/642d3844e12daca5c57e367b/d7f46bee-4ad4-4c14-b320-cbe28d0e6864-IMG_20230207_182529%20%28Small%29.jpg\",\n                \"name\": \"Jewellery\",\n                \"deletedAt\": \"2023-04-05T09:08:45.935Z\"\n            },\n            \"subCategory\": {\n                \"_id\": \"642d3e5d26fd9873fa07805f\",\n                \"isDeleted\": false,\n                \"deletedAt\": \"2023-04-05T09:58:27.548Z\",\n                \"title\": \"Earings\",\n                \"description\": \"Hello There this is a subcategory\",\n                \"createdAt\": \"2023-04-05T09:24:45.162Z\",\n                \"updatedAt\": \"2023-04-05T09:58:27.557Z\",\n                \"__v\": 0,\n                \"image\": \"https://helo-app-1.s3.ap-south-1.amazonaws.com/images/642d3e5d26fd9873fa07805f/af3085ec-21e0-478d-9de9-48faaac7442c-RTO.png\"\n            },\n            \"price\": \"600\",\n            \"HSNCODE\": \"34879589343\",\n            \"SKU\": \"43849\",\n            \"createdAt\": \"2023-04-05T10:33:21.102Z\",\n            \"updatedAt\": \"2023-06-05T19:49:02.709Z\",\n            \"__v\": 0,\n            \"quantity\": \"NaN\"\n        },\n        {\n            \"_id\": \"642d4bf6ead792c293b1dd72\",\n            \"image\": [\n                \"https://helo-app-1.s3.ap-south-1.amazonaws.com/images/642d4bf6ead792c293b1dd72/4c3404ae-681e-492f-ae53-0e01039740f1-2022-09-28%20%281%29.png\"\n            ],\n            \"inStock\": true,\n            \"isDeleted\": false,\n            \"name\": \"New Product Name Here\",\n            \"description\": \"New Product name Added to the old place\",\n            \"category\": {\n                \"_id\": \"642d3844e12daca5c57e367b\",\n                \"isDeleted\": false,\n                \"description\": \"This is a simple description\",\n                \"createdAt\": \"2023-04-05T08:58:44.693Z\",\n                \"updatedAt\": \"2023-04-05T09:08:46.318Z\",\n                \"__v\": 0,\n                \"image\": \"https://helo-app-1.s3.ap-south-1.amazonaws.com/images/642d3844e12daca5c57e367b/d7f46bee-4ad4-4c14-b320-cbe28d0e6864-IMG_20230207_182529%20%28Small%29.jpg\",\n                \"name\": \"Jewellery\",\n                \"deletedAt\": \"2023-04-05T09:08:45.935Z\"\n            },\n            \"subCategory\": {\n                \"_id\": \"642d3e5d26fd9873fa07805f\",\n                \"isDeleted\": false,\n                \"deletedAt\": \"2023-04-05T09:58:27.548Z\",\n                \"title\": \"Earings\",\n                \"description\": \"Hello There this is a subcategory\",\n                \"createdAt\": \"2023-04-05T09:24:45.162Z\",\n                \"updatedAt\": \"2023-04-05T09:58:27.557Z\",\n                \"__v\": 0,\n                \"image\": \"https://helo-app-1.s3.ap-south-1.amazonaws.com/images/642d3e5d26fd9873fa07805f/af3085ec-21e0-478d-9de9-48faaac7442c-RTO.png\"\n            },\n            \"price\": \"600\",\n            \"HSNCODE\": \"34879589343\",\n            \"SKU\": \"43849\",\n            \"createdAt\": \"2023-04-05T10:22:46.984Z\",\n            \"updatedAt\": \"2023-04-07T06:11:22.172Z\",\n            \"__v\": 1,\n            \"deletedAt\": \"2023-04-05T10:35:15.332Z\",\n            \"quantity\": \"4\",\n            \"discount\": {\n                \"_id\": \"642fb40a812521152c5e1ccd\",\n                \"name\": \"10% extra discount to this product\",\n                \"description\": \"Hi! I am added to this product for additional discount to the product. You are very lucky to get this discount offer.\",\n                \"discountPercentage\": \"20%\",\n                \"isActivated\": true,\n                \"isDeleted\": false,\n                \"createdAt\": \"2023-04-07T06:11:22.127Z\",\n                \"updatedAt\": \"2023-04-07T06:11:22.127Z\",\n                \"__v\": 0\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "Add product to cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"642d4e71a106490c3f29959c\",\r\n    \"quantity\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cart/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\":\"642d4e71a106490c3f29959c\",\r\n  \"quantity\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cart/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/cart/delete/642d4e71a106490c3f29959c",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"cart",
+								"delete",
+								"642d4e71a106490c3f29959c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cart elements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/cart/get",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"cart",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "Create Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\":\"642d4e71a106490c3f29959c\",\r\n  \"quantity\":\"1\",\r\n  \"paymentType\":\"COD\",\r\n  \"status\":\"success\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"642d4e71a106490c3f29959c\",\r\n    \"paymentId\":\"qik9Y0qtviIS91Y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/order/create",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"642d4e71a106490c3f29959c\",\r\n    \"paymentId\":\"qik9Y0qtviIS91Y\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://astrology-server.onrender.com/api/order/create",
+									"protocol": "https",
+									"host": [
+										"astrology-server",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"order",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 03:57:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "7d2db9e09ab9321d-BOM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14a-rug/TKz3y0TLylvjz2naKQfIx0I\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=b4aHHAn4T6LKuwFsmweMNW77HIL7g6k4LkgpGXz2hJU-1686023829-0-ASfUxNY/DwWyVFzvfI2rXcD2msXnERF94LOdTtgPnNOIziuBjBk2/r7zs+KwRg3DxOGsaZBBJlLgITPmceb9c1w=; path=/; expires=Tue, 06-Jun-23 04:27:09 GMT; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_cfuvid=ZzYiyU5tYM1R6.N0Qmsg4UiScBYJE9Gor5aly9eA5sY-1686023829738-0-604800000; path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order created successfully\",\n    \"OrderDetail\": {\n        \"_id\": \"647eae9497537f82e361c4b2\",\n        \"isDeleted\": false,\n        \"paymentId\": \"647e3c2e9770946667348b32\",\n        \"paymentGeneratedId\": \"qik9Y0qtviIS91Y\",\n        \"userId\": \"647dc5610145b7e9ca69e5df\",\n        \"orderId\": \"dGeiwipKzn\",\n        \"createdAt\": \"2023-06-06T03:57:09.101Z\",\n        \"updatedAt\": \"2023-06-06T03:57:09.101Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Ordders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/order/get",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"order",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Ordders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://astrology-server.onrender.com/api/order/get",
+									"protocol": "https",
+									"host": [
+										"astrology-server",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"order",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 04:03:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "7d2dc3a489cb857b-BOM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"470-2i17woyis48ji3ADEsXxbDF1ZLQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=hWAOYSP0ZQKEk1UFshh0V1pbEY3ufU3W8qxycAp8VM0-1686024194-0-AceDntDhsaGZSniG5rxyroVUMYrWP346X1CN5U9LAyxMGwQ0LqIYJIsKKyGVywIkJoql7xKRNxMiYlbwGXpxq58=; path=/; expires=Tue, 06-Jun-23 04:33:14 GMT; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_cfuvid=x4mjo3s0cgu5w1lA6jxJDy_cDQRQfR0NkNt3HhDTY3Y-1686024194318-0-604800000; path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order found successfully\",\n    \"order\": [\n        {\n            \"_id\": \"647eae9497537f82e361c4b2\",\n            \"isDeleted\": false,\n            \"paymentId\": {\n                \"_id\": \"647e3c2e9770946667348b32\",\n                \"isDeleted\": false,\n                \"amount\": \"600\",\n                \"userId\": \"647dc5610145b7e9ca69e5df\",\n                \"productId\": \"642d4e71a106490c3f29959c\",\n                \"paymentType\": \"COD\",\n                \"paymentStatus\": \"success\",\n                \"paymentId\": \"qik9Y0qtviIS91Y\",\n                \"createdAt\": \"2023-06-05T19:49:02.578Z\",\n                \"updatedAt\": \"2023-06-05T19:49:02.578Z\",\n                \"__v\": 0\n            },\n            \"paymentGeneratedId\": \"qik9Y0qtviIS91Y\",\n            \"userId\": {\n                \"address\": {\n                    \"nationality\": \"Indian\",\n                    \"state\": \"Gujarat\",\n                    \"street\": \"ahdsskhfer8 nuhdsfksfk\",\n                    \"city\": \"A'Bad\",\n                    \"pincode\": \"380058\"\n                },\n                \"_id\": \"647dc5610145b7e9ca69e5df\",\n                \"countryCode\": \"+91\",\n                \"mobileNumber\": \"8423292659\",\n                \"isDeleted\": false,\n                \"cart\": [],\n                \"wishlist\": [],\n                \"createdAt\": \"2023-06-05T11:22:09.767Z\",\n                \"updatedAt\": \"2023-06-05T12:22:23.457Z\",\n                \"__v\": 0,\n                \"otp\": \"$2b$10$gvPRTe/ve7CsYE9ccViC1Of6SbWqSI4R/M8BYUm.YHjRTwCHYt5x2\",\n                \"otpExpiration\": \"2023-06-05T11:33:42.272Z\",\n                \"dateOfBirth\": \"03-02-2002\",\n                \"email\": \"kuldeep@techaronic.com\",\n                \"firstName\": \"Kuldeep\",\n                \"gender\": \"male\",\n                \"lastName\": \"Kumar\"\n            },\n            \"orderId\": \"dGeiwipKzn\",\n            \"createdAt\": \"2023-06-06T03:57:09.101Z\",\n            \"updatedAt\": \"2023-06-06T03:57:09.101Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Specific order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/order/cancel/647eae9497537f82e361c4b2",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"order",
+								"cancel",
+								"647eae9497537f82e361c4b2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Specific order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://astrology-server.onrender.com/api/order/cancel/647eae9497537f82e361c4b2",
+									"protocol": "https",
+									"host": [
+										"astrology-server",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"order",
+										"cancel",
+										"647eae9497537f82e361c4b2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 04:15:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "7d2dd6111bab85f1-BOM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-NgZtU14+afwuYAvz4lQ9/KvjIR0\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=XI.dF6S2o_Hg1uMeJ0TKtFlJgmULNuwZhL.mm4PHKnk-1686024948-0-ATSXXQt/tg9fg2Qo9h6XM8/3dyMTrHGQz23ukCo0pDCb6FpTN1h/3DrlmcIIQcxd50KrQ6aRRiKX4D57vMZotbA=; path=/; expires=Tue, 06-Jun-23 04:45:48 GMT; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_cfuvid=i1K_qd.LFHZU.3j.DJ8mLBDKvxCQaf3XrWUl42fO2_U-1686024948974-0-604800000; path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order cancelled successfully\",\n    \"order\": {\n        \"_id\": \"647eae9497537f82e361c4b2\",\n        \"isDeleted\": false,\n        \"paymentId\": \"647e3c2e9770946667348b32\",\n        \"paymentGeneratedId\": \"qik9Y0qtviIS91Y\",\n        \"userId\": \"647dc5610145b7e9ca69e5df\",\n        \"orderId\": \"dGeiwipKzn\",\n        \"createdAt\": \"2023-06-06T03:57:09.101Z\",\n        \"updatedAt\": \"2023-06-06T04:15:48.573Z\",\n        \"__v\": 0,\n        \"orderStatus\": \"Cancelled\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "Get appointments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/appointment/my",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"appointment",
+								"my"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get appointments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/appointment/my",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"appointment",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"164-EIfLTSnB/zjCpsFwQPT5ZE0p00I\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 05:18:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"appointments\": [\n        {\n            \"_id\": \"647ec1865ab2e86e7a2c5aa2\",\n            \"user\": \"647dc5610145b7e9ca69e5df\",\n            \"jyotis\": {\n                \"_id\": \"64339bdd4957a66f72ffb32c\",\n                \"name\": \"Kuldeep Kumar\",\n                \"email\": \"kuldeep.solutions900@gmail.com\"\n            },\n            \"date\": \"10-06-2023\",\n            \"time\": \"10:00 AM\",\n            \"status\": \"pending\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-06T05:17:58.954Z\",\n            \"updatedAt\": \"2023-06-06T05:17:58.954Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Book Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jyotisId\":\"64339bdd4957a66f72ffb32c\",\r\n    \"date\":\"10-06-2023\",\r\n    \"time\":\"10:00 AM\",\r\n    \"status\":\"pending\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/appointment/book",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"appointment",
+								"book"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Book Appointment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jyotisId\":\"64339bdd4957a66f72ffb32c\",\r\n    \"date\":\"10-06-2023\",\r\n    \"time\":\"10:00 AM\",\r\n    \"status\":\"pending\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/appointment/book",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"appointment",
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-fj21+BCVxz5OOogjw2oSy+0t+Ss\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 05:17:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Appointment booked successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancel Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/appointment/cancel/647ec1865ab2e86e7a2c5aa2",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"cancel",
+								"647ec1865ab2e86e7a2c5aa2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cancel Appointment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://astrology-server.onrender.com/api/appointment/cancel/647ec1865ab2e86e7a2c5aa2",
+									"protocol": "https",
+									"host": [
+										"astrology-server",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"appointment",
+										"cancel",
+										"647ec1865ab2e86e7a2c5aa2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 07:03:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "7d2ecc0388650e7c-BOM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-Jw2PGieoBS7K9KS+4ENSwYn4sRU\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=J_IhDHIlyNFdJDSLKqAEjy1X92vjLj41Jcrjz7p3gEo-1686035023-0-Ab4AEAR3UeW2przP6B9vjJuPJjM2A9ga+xqPGIgdmYaNjto5h+w/lyBMXBtoi4Qecd4BLyPEPXYyBLpDCgKFaWA=; path=/; expires=Tue, 06-Jun-23 07:33:43 GMT; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_cfuvid=fV.2FWW4sZ6gzKnAE8ioMy.jPQCJio.0Tr3CK3LpqwE-1686035023197-0-604800000; path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Appointment cancelled\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Jyotis",
+			"item": [
+				{
+					"name": "Get all jyotish",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/jyotis/get-all-jyotis",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"jyotis",
+								"get-all-jyotis"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all jyotish",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/jyotis/get-all-jyotis",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"jyotis",
+										"get-all-jyotis"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1031"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"407-W5Y+XkrrRLfK2TA+9hBhGbGYMJM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 05:11:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jyotis\": [\n        {\n            \"address\": {\n                \"building\": \"11 Kantipark Society Bopal Gam\",\n                \"city\": \"Ahmedabad\",\n                \"country\": \"India\",\n                \"pincode\": \"380058\",\n                \"state\": \"Gujarat\"\n            },\n            \"_id\": \"64339bdd4957a66f72ffb32c\",\n            \"isDeleted\": false,\n            \"deletedAt\": \"2023-04-10T06:32:15.477Z\",\n            \"name\": \"Kuldeep Kumar\",\n            \"email\": \"kuldeep.solutions900@gmail.com\",\n            \"mobileNumber\": \"8423292650\",\n            \"gender\": \"male\",\n            \"countryCode\": \"+91\",\n            \"description\": \"Please Add some description about your profession related to Jyotis Shastra such as your specialization.\",\n            \"rating\": \"4.5\",\n            \"experience\": \"2 years\",\n            \"expertIn\": \"Palm Reading\",\n            \"createdAt\": \"2023-04-10T05:17:17.101Z\",\n            \"updatedAt\": \"2023-04-10T06:32:15.482Z\",\n            \"__v\": 4,\n            \"image\": \"https://helo-app-1.s3.ap-south-1.amazonaws.com/jyotis/64339bdd4957a66f72ffb32c/d9bd17a0-53ab-4b52-830d-5b7e56c8b51c-Untitled.png\",\n            \"timeSlots\": [\n                {\n                    \"day\": \"Monday\",\n                    \"time\": [\n                        {\n                            \"start\": \"10:00\",\n                            \"end\": \"11:00\"\n                        },\n                        {\n                            \"start\": \"11:00\",\n                            \"end\": \"12:00\"\n                        },\n                        {\n                            \"start\": \"02:00\",\n                            \"end\": \"03:00\"\n                        },\n                        {\n                            \"start\": \"03:00\",\n                            \"end\": \"04:00\"\n                        }\n                    ]\n                },\n                {\n                    \"day\": \"Tuesday\",\n                    \"time\": [\n                        {\n                            \"start\": \"10:00\",\n                            \"end\": \"11:00\"\n                        },\n                        {\n                            \"start\": \"11:00\",\n                            \"end\": \"12:00\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Single Jyotish",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/jyotis/get-jyotis/64339bdd4957a66f72ffb32c",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"jyotis",
+								"get-jyotis",
+								"64339bdd4957a66f72ffb32c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://astrology-server.onrender.com/api/jyotis/get-jyotis/64339bdd4957a66f72ffb32c",
+									"protocol": "https",
+									"host": [
+										"astrology-server",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"jyotis",
+										"get-jyotis",
+										"64339bdd4957a66f72ffb32c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 08:06:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "7d2f26912b722e23-BOM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"405-dUhxJeGqA/5M09ZU3lEhUQTSqEM\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=zHEPUTdcACQzwZalu7FTQ0tSAmW.ZWmS9fgGgxTdSBY-1686038813-0-ARoGveBzjMteCsAuXcckA1jB1Uqc4SyAbx6Z9cXLityz96W80HMGE4E2ld6yVHtqHf0WEG3mzJ7HmowkLQest/g=; path=/; expires=Tue, 06-Jun-23 08:36:53 GMT; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_cfuvid=3b0hjY8oxH9c5MELm.hoYcuBoKdTHmdrKz_nEixujRo-1686038813837-0-604800000; path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jyotis\": {\n        \"address\": {\n            \"building\": \"11 Kantipark Society Bopal Gam\",\n            \"city\": \"Ahmedabad\",\n            \"country\": \"India\",\n            \"pincode\": \"380058\",\n            \"state\": \"Gujarat\"\n        },\n        \"_id\": \"64339bdd4957a66f72ffb32c\",\n        \"isDeleted\": false,\n        \"deletedAt\": \"2023-04-10T06:32:15.477Z\",\n        \"name\": \"Kuldeep Kumar\",\n        \"email\": \"kuldeep.solutions900@gmail.com\",\n        \"mobileNumber\": \"8423292650\",\n        \"gender\": \"male\",\n        \"countryCode\": \"+91\",\n        \"description\": \"Please Add some description about your profession related to Jyotis Shastra such as your specialization.\",\n        \"rating\": \"4.5\",\n        \"experience\": \"2 years\",\n        \"expertIn\": \"Palm Reading\",\n        \"createdAt\": \"2023-04-10T05:17:17.101Z\",\n        \"updatedAt\": \"2023-04-10T06:32:15.482Z\",\n        \"__v\": 4,\n        \"image\": \"https://helo-app-1.s3.ap-south-1.amazonaws.com/jyotis/64339bdd4957a66f72ffb32c/d9bd17a0-53ab-4b52-830d-5b7e56c8b51c-Untitled.png\",\n        \"timeSlots\": [\n            {\n                \"day\": \"Monday\",\n                \"time\": [\n                    {\n                        \"start\": \"10:00\",\n                        \"end\": \"11:00\"\n                    },\n                    {\n                        \"start\": \"11:00\",\n                        \"end\": \"12:00\"\n                    },\n                    {\n                        \"start\": \"02:00\",\n                        \"end\": \"03:00\"\n                    },\n                    {\n                        \"start\": \"03:00\",\n                        \"end\": \"04:00\"\n                    }\n                ]\n            },\n            {\n                \"day\": \"Tuesday\",\n                \"time\": [\n                    {\n                        \"start\": \"10:00\",\n                        \"end\": \"11:00\"\n                    },\n                    {\n                        \"start\": \"11:00\",\n                        \"end\": \"12:00\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Gallery",
+			"item": [
+				{
+					"name": "Get Gallery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/gallery/get",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"gallery",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://astrology-server.onrender.com/api/gallery/get",
+									"protocol": "https",
+									"host": [
+										"astrology-server",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"gallery",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 08:31:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "7d2f4c6a981a31b1-BOM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"155-takZ2NU2EISy7zH2UT6MHuOYZzw\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=CUIjSp.Be6Ii.370vPl699po4S82h_Pvr2Q8OFLic18-1686040281-0-AZkP6jEg7X2apZOgUfbO0HYRPQgagj5rfQutryc7vbE4qNlhOT2DgwC+ZgFdhoOfrKudR/68jBdDm7CIgBhDimg=; path=/; expires=Tue, 06-Jun-23 09:01:21 GMT; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_cfuvid=ktCJST4uf9jb4SmsNBaq.5iOl.GwmqM1pxSVtw45R6I-1686040281854-0-604800000; path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"gallery\": [\n        {\n            \"_id\": \"64353aff755eb940858a70bc\",\n            \"title\": \"My Folder\",\n            \"description\": \"This is a simple desription of Folder\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-04-11T10:48:31.968Z\",\n            \"updatedAt\": \"2023-04-11T11:15:53.376Z\",\n            \"__v\": 0,\n            \"image\": \"https://helo-app-1.s3.ap-south-1.amazonaws.com/gallery/64353aff755eb940858a70bc/2022-10-22%20%282%29.png\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Videos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/gallery/get-videos/64353aff755eb940858a70bc",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"gallery",
+								"get-videos",
+								"64353aff755eb940858a70bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/gallery/get-video/643549a4150fd6793877bbd2",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"gallery",
+								"get-video",
+								"643549a4150fd6793877bbd2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PLans",
+			"item": [
+				{
+					"name": "Get  plans",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://astrology-server.onrender.com/api/plan/get",
+							"protocol": "https",
+							"host": [
+								"astrology-server",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"plan",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SubsCribe PLan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plan\":\"64352584decaf84132e8270d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/subscription/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"subscription",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Give Feedback",
+			"item": [
+				{
+					"name": "Give Feedback",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/cms/get-all-feedback-ques",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cms",
+								"get-all-feedback-ques"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Feedback",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/cms/get-all-feedback-ques",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cms",
+										"get-all-feedback-ques"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10-/Rlrq2SnaX/X7JzBESB8BRNiXwg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 09:19:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feedbacks\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all faqs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/cms/get-all-faqs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cms",
+								"get-all-faqs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New features",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/cms/new-features",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cms",
+								"new-features"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send get in touch message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kuldeep Kumar\",\r\n    \"sendMessageEmail\":\"kuldeepvishwakarma@techaronic.com\",\r\n    \"message\":\"This is a simple message\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cms/send-message",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cms",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "WishList",
+			"item": [
+				{
+					"name": "New Folder",
+					"item": []
+				},
+				{
+					"name": "Add Product to wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"642d4bf6ead792c293b1dd72\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/user/add-to-wishlist",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"add-to-wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List WishList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/user/get-wishlist",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"get-wishlist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/user/get-wishlist",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user",
+										"get-wishlist"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1070"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42e-ZGFlEltsHHGdkbZgdU34fYmb+M4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 14:51:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Wishlist fetched successfully\",\n    \"wishlistData\": [\n        {\n            \"_id\": \"642d4e71a106490c3f29959c\",\n            \"image\": [],\n            \"inStock\": true,\n            \"isDeleted\": false,\n            \"name\": \"Bangles\",\n            \"description\": \"This is a simple description about the bangles\",\n            \"category\": \"642d3844e12daca5c57e367b\",\n            \"subCategory\": \"642d3e5d26fd9873fa07805f\",\n            \"price\": \"600\",\n            \"HSNCODE\": \"34879589343\",\n            \"SKU\": \"43849\",\n            \"createdAt\": \"2023-04-05T10:33:21.102Z\",\n            \"updatedAt\": \"2023-06-05T19:49:02.709Z\",\n            \"__v\": 0,\n            \"quantity\": \"NaN\"\n        },\n        {\n            \"_id\": \"642d4bf6ead792c293b1dd72\",\n            \"image\": [\n                \"https://helo-app-1.s3.ap-south-1.amazonaws.com/images/642d4bf6ead792c293b1dd72/4c3404ae-681e-492f-ae53-0e01039740f1-2022-09-28%20%281%29.png\"\n            ],\n            \"inStock\": true,\n            \"isDeleted\": false,\n            \"name\": \"New Product Name Here\",\n            \"description\": \"New Product name Added to the old place\",\n            \"category\": \"642d3844e12daca5c57e367b\",\n            \"subCategory\": \"642d3e5d26fd9873fa07805f\",\n            \"price\": \"600\",\n            \"HSNCODE\": \"34879589343\",\n            \"SKU\": \"43849\",\n            \"createdAt\": \"2023-04-05T10:22:46.984Z\",\n            \"updatedAt\": \"2023-04-07T06:11:22.172Z\",\n            \"__v\": 1,\n            \"deletedAt\": \"2023-04-05T10:35:15.332Z\",\n            \"quantity\": \"4\",\n            \"discount\": \"642fb40a812521152c5e1ccd\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI4NDIzMjkyNjU5IiwiY291bnRyeUNvZGUiOiIrOTEiLCJ1c2VySWQiOiI2NDdkYzU2MTAxNDViN2U5Y2E2OWU1ZGYiLCJpYXQiOjE2ODU5NjQ1NDR9.cCsPoQlCQ2MIOmXlnbJppSPmzfkTqm95d-AOZUTN3x0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"642d4bf6ead792c293b1dd72\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/user/remove-from-wishlist",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"remove-from-wishlist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove from wishlist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"642d4bf6ead792c293b1dd72\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/user/remove-from-wishlist",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user",
+										"remove-from-wishlist"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,PUT,POST,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-W29A/Gjmeeof2SWoTgPJdrhlF3o\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 12:13:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product removed from wishlist\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Personel Details Modifications",
+					"item": [
+						{
+							"name": "Register Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\":\"kuldeepvishwakarma@techaronic.com\",\r\n  \"firstName\":\"Kuldeep\",\r\n  \"lastName\":\"Vishwakarma\",\r\n  \"password\":\"Kuldeep@9936\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/admin/sign-up",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"sign-up"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\":\"kuldeepvishwakarma@techaronic.com\",\r\n  \"firstName\":\"Kuldeep\",\r\n  \"lastName\":\"Vishwakarma\",\r\n  \"password\":\"Kuldeep@9936\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/admin/sign-up",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"admin",
+												"sign-up"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "35"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"23-YsSrbfhPBo5PNRhpOhArqd7KnMQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Jun 2023 17:31:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"OTP sent successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Authenticate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"kuldeepvishwakarma@techaronic.com\",\r\n    \"otp\":\"438543\" \r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/admin/auth",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"kuldeepvishwakarma@techaronic.com\",\r\n    \"otp\":\"196508\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/admin/auth",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "268"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10c-rqpKyvQyQ2czTiZ0EbmIj/8jNgs\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Jun 2023 17:32:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User authenticated successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imt1bGRlZXB2aXNod2FrYXJtYUB0ZWNoYXJvbmljLmNvbSIsInVzZXJJZCI6IjY0N2Y2YjZjOTIyMGRhOGZmNmMwMzdhOCIsImlhdCI6MTY4NjA3Mjc0NH0.y4Uwu75PqOWCm1dJQ3t_TppgAIAUKlRkZF_mksOtp2w\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imt1bGRlZXB2aXNod2FrYXJtYUB0ZWNoYXJvbmljLmNvbSIsInVzZXJJZCI6IjY0N2Y2YjZjOTIyMGRhOGZmNmMwMzdhOCIsImlhdCI6MTY4NjA3Mjc0NH0.y4Uwu75PqOWCm1dJQ3t_TppgAIAUKlRkZF_mksOtp2w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\":\"kuldeepvishwakarma@techaronic.com\",\r\n  \"firstName\":\"Kuldeep\",\r\n  \"lastName\":\"Vishwakarma\",\r\n  \"password\":\"Kuldeep@9935\",\r\n  \"mobileNumber\":\"7493849378\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/admin/update-profile",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"update-profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\":\"kuldeepvishwakarma@techaronic.com\",\r\n  \"firstName\":\"Kuldeep\",\r\n  \"lastName\":\"Vishwakarma\",\r\n  \"password\":\"Kuldeep@9935\",\r\n  \"mobileNumber\":\"7493849378\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/admin/update-profile",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"admin",
+												"update-profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"27-dfFyQgR3GE+Pkj6o/3TrBgkhH1g\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Jun 2023 19:34:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User updated successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": []
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Add Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imt1bGRlZXB2aXNod2FrYXJtYUB0ZWNoYXJvbmljLmNvbSIsInVzZXJJZCI6IjY0N2Y2YjZjOTIyMGRhOGZmNmMwMzdhOCIsImlhdCI6MTY4NjA3Mjc0NH0.y4Uwu75PqOWCm1dJQ3t_TppgAIAUKlRkZF_mksOtp2w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Cloths",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "This is a simple description about the Cloths Category",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/api/category/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"category",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Cloths",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "This is a simple description about the Cloths Category",
+													"type": "text"
+												},
+												{
+													"key": "file",
+													"type": "file",
+													"src": [],
+													"disabled": true
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/category/create",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"category",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "43"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2b-6aRNjCaAgGT561PQXIupOm7tRzw\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Jun 2023 19:42:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Category created successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imt1bGRlZXB2aXNod2FrYXJtYUB0ZWNoYXJvbmljLmNvbSIsInVzZXJJZCI6IjY0N2Y2YjZjOTIyMGRhOGZmNmMwMzdhOCIsImlhdCI6MTY4NjA3Mjc0NH0.y4Uwu75PqOWCm1dJQ3t_TppgAIAUKlRkZF_mksOtp2w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"cloth category\",\r\n    \"description\":\"Thie is updated Description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/category/update/647f8c1e9b517d41a464305f",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"category",
+										"update",
+										"647f8c1e9b517d41a464305f"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"cloth category\",\r\n    \"description\":\"Thie is updated Description\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/category/update/647f8c1e9b517d41a464305f",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"category",
+												"update",
+												"647f8c1e9b517d41a464305f"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "43"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2b-qHzEGuzfkbWWaCpwJ2RicWXJxGw\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 07 Jun 2023 09:44:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Category updated successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SubCategory",
+					"item": [
+						{
+							"name": "Create SubCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imt1bGRlZXB2aXNod2FrYXJtYUB0ZWNoYXJvbmljLmNvbSIsInVzZXJJZCI6IjY0N2Y2YjZjOTIyMGRhOGZmNmMwMzdhOCIsImlhdCI6MTY4NjA3Mjc0NH0.y4Uwu75PqOWCm1dJQ3t_TppgAIAUKlRkZF_mksOtp2w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Some Title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Write your description here",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "category",
+											"value": "647f8c1e9b517d41a464305f",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/api/sub-category/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"sub-category",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "Some Title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Write your description here",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": []
+												},
+												{
+													"key": "category",
+													"value": "647f8c1e9b517d41a464305f",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:8080/api/sub-category/create",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"sub-category",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "46"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2e-+rxsR7DEcs1nNAk7uBQn+prN2qM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 07 Jun 2023 09:01:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"SubCategory created successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Product Sub Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imt1bGRlZXB2aXNod2FrYXJtYUB0ZWNoYXJvbmljLmNvbSIsInVzZXJJZCI6IjY0N2Y2YjZjOTIyMGRhOGZmNmMwMzdhOCIsImlhdCI6MTY4NjA3Mjc0NH0.y4Uwu75PqOWCm1dJQ3t_TppgAIAUKlRkZF_mksOtp2w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Suit",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "This is a simple description",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "647f8c1e9b517d41a464305f",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/backgroundIMAGES/Images/wallpaper_15916710995edef93b2f635.jpg"
+										},
+										{
+											"key": "isDeleted",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/api/sub-category/update/6480475c6f409ae79acd18f1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"sub-category",
+										"update",
+										"6480475c6f409ae79acd18f1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "Suit",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "This is a simple description",
+													"type": "text"
+												},
+												{
+													"key": "category",
+													"value": "647f8c1e9b517d41a464305f",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/D:/backgroundIMAGES/Images/wallpaper_15916710995edef93b2f635.jpg"
+												},
+												{
+													"key": "isDeleted",
+													"value": "false",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:8080/api/sub-category/update/6480475c6f409ae79acd18f1",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"sub-category",
+												"update",
+												"6480475c6f409ae79acd18f1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "46"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2e-BJHIkPtmvFnlb8S1EYEoU4yqlJE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 07 Jun 2023 09:37:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"SubCategory updated successfully\"\n}"
+								},
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "Suit",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "This is a simple description",
+													"type": "text"
+												},
+												{
+													"key": "category",
+													"value": "647f8c1e9b517d41a464305f",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/D:/backgroundIMAGES/Images/wallpaper_15916710995edef93b2f635.jpg"
+												},
+												{
+													"key": "isDeleted",
+													"value": "false",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:8080/api/sub-category/update/6480475c6f409ae79acd18f1",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"sub-category",
+												"update",
+												"6480475c6f409ae79acd18f1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type, authorization"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "46"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2e-BJHIkPtmvFnlb8S1EYEoU4yqlJE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 07 Jun 2023 09:37:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"SubCategory updated successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cards",
+					"item": [
+						{
+							"name": "Create New Card",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update Card",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Add card Images",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

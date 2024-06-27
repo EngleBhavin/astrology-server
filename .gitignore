@@ -1,0 +1,7 @@
+node_modules
+
+.env
+
+*.code-workspace
+*.heapsnapshot
+vscode-profile-2023-04-03-11-55-52.heapsnapshot

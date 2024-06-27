@@ -1,0 +1,64 @@
+const mongoose = require("mongoose");
+const colors = require('colors')
+require('dotenv').config();
+
+// var dbConnection = ()=>{
+ 
+//     const conn =  mongoose.connect(process.env.MONGO_URI,{
+//         useNewUrlParser:true,
+//         useUnifiedTopology:true
+//     }).then((conn)=>{
+
+//     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+//     }).catch((error)=>{
+//         console.error(error+"".red);
+//         process.exit(1);
+//     })
+// }
+
+// mongoose.connect(
+//     process.env.MONGO_URI,
+// ).then((conn)=>{
+//     console.log(`MongoDB Connected: ${conn.connection.host} database: ${conn.connection.name}`.bgBlue);
+// }).catch((error)=>{
+//     console.error(error+"".red);
+//     process.exit();
+// });
+
+
+// module.exports = dbConnection;
+
+
+// creating mongoose connection and exporting it for further use
+// const conn = mongoose.createConnection(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
+
+// conn.on("connected", () => {
+//     console.log(`MongoDB Connected: ${conn.connection.host} database: ${conn.connection.name}`.bgBlue);
+// }
+// );
+
+// conn.on("error", (error) => {
+//     console.error(error + "".red);
+//     process.exit();
+// }
+// );
+
+// module.exports = conn;
+
+const connectDB = async ()=>{
+    try {
+        const conn = await mongoose.connect(process.env.MONGO_URI,{
+            useNewUrlParser:true,
+            useUnifiedTopology:true
+        });
+        console.log(`MongoDB Connected: ${conn.connection.host} database: ${conn.connection.name}`.bgBlue);
+    } catch (error) {
+        console.error(error+"".red);
+        process.exit();
+    }
+}
+
+module.exports = connectDB;
