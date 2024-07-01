@@ -10,22 +10,46 @@ const {
 const { uploadFile } = require("../global/fileUploader");
 const Product = require("../models/product");
 const Order = require("../models/orders");
-
-
+const transporter = require("../utils/mailSender");
 
 exports.signup = async (req, res) => {
-  const { mobileNumber, countryCode } = req.body;
+  const { mobileNumber, countryCode, email } = req.body;
   try {
-    console.log(req.body)
-    let user = await userModel.findOne({ mobileNumber: mobileNumber,countryCode:countryCode });
+    // console.log(req.body);
+    let user = await userModel.findOne({
+      mobileNumber: mobileNumber,
+      countryCode: countryCode,
+      email: email,
+    });
     if (!user) {
-      user = new userModel({ mobileNumber, countryCode});
+      user = new userModel({ mobileNumber, countryCode, email });
       user = await user.save();
     }
 
     let otp = otpGenerator();
     let sentotp = otp;
     let otpExpiration = new Date(new Date().getTime() + 5 * 60 * 1000);
+    // mail options
+    let mailOptions = {
+      from: process.env.AUTH_EMAIL,
+      to: email,
+      html: `
+        <h1>Welcome to Astrology application. </h1>
+        <!-- <p>This email is for verification of mail and every time you need this email for login to the application</p> -->
+      <h2>Your OTP is ${otp}</h2>
+        <h3>The above otp is valid for only 5 minutes.</h3>
+      `,
+      subject: "OTP for verification",
+    };
+    // send mail
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+        throw new Error("Error in sending mail");
+      }
+      console.log("Email sent: " + info.response);
+    });
+
     otp = await hashGenerator(otp.toString());
     await userModel.updateOne(
       { _id: user._id },
@@ -41,20 +65,18 @@ exports.signup = async (req, res) => {
 };
 
 exports.authenticate = async (req, res) => {
-  let { mobileNumber, countryCode, otp } = req.body;
-  console.log(req.body);
+  let { email, otp } = req.body;
+  // console.log(req.body);
   try {
     // console.log(await userModel.find())
     let user = await userModel.findOne({
-      mobileNumber: mobileNumber,
-
-      countryCode: countryCode,
+      email: email,
       isDeleted: false,
     });
     // console.log(user);
-    // if (!user) {
-    //   return res.status(404).json({ message: "User not found" });
-    // }
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
     if (otp !== "555555") {
       if (!user) {
         return res.status(404).json({ message: "User not found" });
@@ -67,7 +89,7 @@ exports.authenticate = async (req, res) => {
       }
     }
 
-    let token = tokenGenerator({ mobileNumber, countryCode, userId: user._id });
+    let token = tokenGenerator({ email:email, userId: user._id });
     return res
       .status(200)
       .json({ message: "User authenticated successfully", token });

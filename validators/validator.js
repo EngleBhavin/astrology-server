@@ -74,13 +74,13 @@ const otpValidator = (otp) => {
   return otpRegex.test(otp);
 };
 const authenticate = (req, res, next) => {
-  const { mobileNumber, otp } = req.body;
-  if (!mobileNumber) {
+  const { email, otp } = req.body;
+  if (!email) {
     return res.status(400).json({ message: "Mobile number is required" });
   }
-  if (!mobileNumberValidator(mobileNumber)) {
-    return res.status(400).json({ message: "Mobile number is invalid" });
-  }
+  // if (!mobileNumberValidator(mobileNumber)) {
+  //   return res.status(400).json({ message: "Mobile number is invalid" });
+  // }
   if (!otp) {
     return res.status(400).json({ message: "OTP is required" });
   }
