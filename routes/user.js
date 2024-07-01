@@ -10,7 +10,7 @@ router.get('/get',middleware.authenticateToken,userController.getProfile);
 router.get('/verify-token',middleware.authenticateToken,userController.veryfyToken);
 
 // Post routes
-router.post('/signup',[validator.signup],userController.signup);
+router.post('/signup',[validator.validateEmail],userController.signup);
 router.post('/authenticate',[validator.authenticate],userController.authenticate);
 router.post('/update',middleware.authenticateToken,userController.updateProfile);
 

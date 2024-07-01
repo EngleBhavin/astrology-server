@@ -24,7 +24,7 @@ const signup = (req, res, next) => {
   if (!mobileNumber) {
     return res.status(400).json({ message: "Mobile number is required" });
   }
-  if (!mobileNumberValidator(mobileNumber)) {
+  if (!validateEmail(mobileNumber)) {
     return res.status(400).json({ message: "Mobile number is invalid" });
   }
   next();
