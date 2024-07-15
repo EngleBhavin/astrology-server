@@ -28,6 +28,7 @@ const subscriptionRouter = require("./routes/subscription");
 const galleryRouter = require("./routes/gallery");
 const feedback = require("./routes/feedback");
 const auth = require('./middlewares/auth');
+const kundaliRouter = require('./routes/kundali');
 
 dbConnection();
 var app = express();
@@ -69,6 +70,7 @@ app.use('/api/plan', planRouter);
 app.use('/api/subscription', subscriptionRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/cms',feedback);
+app.use('/api/kundali',kundaliRouter);
 
 app.get('/api/check-auth',auth.authenticateToken,async(req,res)=>{
     try{

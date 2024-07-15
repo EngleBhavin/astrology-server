@@ -87,6 +87,7 @@ const authenticate = (req, res, next) => {
   if (!otpValidator(otp)) {
     return res.status(400).json({ message: "OTP is invalid" });
   }
+ 
   next();
 };
 

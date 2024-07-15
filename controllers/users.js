@@ -38,8 +38,8 @@ exports.signup = async (req, res) => {
         <!-- <p>This email is for verification of mail and every time you need this email for login to the application</p> -->
       <h2>Your OTP is ${otp}</h2>
         <h3>The above otp is valid for only 5 minutes.</h3>
-      `,
-      subject: "OTP for verification",
+      `,   
+         subject: "OTP for verification",
     };
     // send mail
     transporter.sendMail(mailOptions, (error, info) => {
