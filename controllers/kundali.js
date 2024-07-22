@@ -1,4 +1,6 @@
 const Kundali = require("../models/kundali");
+
+const { imageUpload } = require("../global/fileUploader");
 exports.createKundali = async (req, res) => {
   try {
     const { name, dob, tob, birthPlace, question } = req.body;
@@ -19,27 +21,7 @@ exports.createKundali = async (req, res) => {
           { $push: { qta: { question } } }
         );
       }
-      //   const qtn = new Question({
-      //     question,
-      //     kundali: kundali._id,
-      //     user: req.user.userId,
-      //   });
-      //   await qtn.save();
     }
-    /*  else {
-      const que = await Question.findOne({ user: req.user.userId, question });
-      if (!que) {
-        const qtn = new Question({
-          question,
-          user: req.user.userId,
-          kundali: checkKundali._id,
-        });
-        await qtn.save();
-      } else {
-        return res.status(400).json({ message: "Question already asked" });
-      }
-    }
-      */
     return res.status(200).json({ message: "Kundali added successfully" });
   } catch (error) {
     console.error(error);
@@ -72,8 +54,9 @@ exports.getKundaliById = async (req, res) => {
         path: "user",
         select: "name email mobileNumber",
       },
-      
     ]);
+
+// console.log(kundali)
     return res
       .status(200)
       .json({ message: "Kundali fetched successfully", kundali });
@@ -90,24 +73,6 @@ exports.getAllKundali = async (req, res) => {
         select: "firstName lastName email mobileNumber",
       },
     ]);
-    // const question = await Question.find();
-    // // console.log(question);
-    // // Now merge the kundali and question
-    // // There are many questions for a single user so we need to filter the question for each user
-
-    // const response = kundali.map((k) => {
-    //   const q = question.find(
-    //     (q) => q.user.toString() === k.user._id.toString()
-    //   );
-    //   console.log(q);
-    //   return {
-    //     ...k._doc,
-    //     question: q.question,
-    //     answer: q.answer,
-    //   };
-    // });
-    // // Now we we merge the kundali and question together
-
     return res
       .status(200)
       .json({ message: "Kundali fetched successfully", kundali });
@@ -157,11 +122,14 @@ exports.askQuestion = async (req, res) => {
 
 exports.replyQuestion = async (req, res) => {
   try {
-    const { answer } = req.body;
+    const { answer, imageUrl } = req.body;
+    let image = imageUrl;
+    console.log(req.body)
     let que = await Kundali.findOne({ _id: req.params.id });
     if (!que) {
       return res.status(404).json({ message: "Question not found" });
     }
+
     let question = que.qta.find((q) => {
       // console.log(q)
       return q._id == req.query.question;
@@ -170,7 +138,24 @@ exports.replyQuestion = async (req, res) => {
     if (!question) {
       return res.status(404).json({ message: "Question not found" });
     }
+    if (req.files || req.file) {
+      if (req.files && req.files.length > 0) {
+        for (let file = 0; file < req.files.length; file++) {
+          const image = await imageUpload(req.files[file], req.params.id );
+          question.image = image.Location;
+        }
+        await que.save();
+      }
+      if (req.file) {
+        const image = await imageUpload(req.file, req.params.id );
+        question.image = image.Location;
+        await que.save();
+      }
+    }
     question.answer = answer;
+    if (image && image.toString().startsWith("http") ){
+      question.image = image;
+    }
     await que.save();
     return res.status(200).json({ message: "Question replied successfully" });
   } catch (error) {

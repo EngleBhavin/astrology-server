@@ -35,6 +35,10 @@ const kundaliSchema = new Schema(
           type: String,
           trim: true,
         },
+        image:{
+          type:String,
+          trim:true
+        }
       },
     ],
     user: {
