@@ -48,9 +48,9 @@ app.use(cookieParser());
 app.use(cors());
 
 // Request Logger
-if (app.get("env") === "development") {
+// if (app.get("env") === "development") {
   app.use(logger("dev"));
-}
+// }
 
 
 // Place your routes here
