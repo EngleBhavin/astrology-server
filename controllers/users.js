@@ -38,8 +38,8 @@ exports.signup = async (req, res) => {
         <!-- <p>This email is for verification of mail and every time you need this email for login to the application</p> -->
       <h2>Your OTP is ${otp}</h2>
         <h3>The above otp is valid for only 5 minutes.</h3>
-      `,   
-         subject: "OTP for verification",
+      `,
+      subject: "OTP for verification",
     };
     // send mail
     transporter.sendMail(mailOptions, (error, info) => {
@@ -54,7 +54,7 @@ exports.signup = async (req, res) => {
     await userModel.updateOne(
       { _id: user._id },
       { $set: { otp, otpExpiration } },
-      { new: true }
+      { new: true },
     );
 
     return res.status(200).json({ message: "OTP sent successfully", sentotp });
@@ -82,14 +82,15 @@ exports.authenticate = async (req, res) => {
         return res.status(404).json({ message: "User not found" });
       }
       if (user.otpExpiration.getTime() < new Date().getTime()) {
+        console.log();
         return res.status(401).json({ message: "OTP expired" });
       }
-      if (!hashVerifier(otp, user.otp)) {
+      if (!hashVerifier(otp.toString(), user.otp.toString())) {
         return res.status(401).json({ message: "OTP is incorrect" });
       }
     }
 
-    let token = tokenGenerator({ email:email, userId: user._id });
+    let token = tokenGenerator({ email: email, userId: user._id });
     return res
       .status(200)
       .json({ message: "User authenticated successfully", token });
@@ -191,7 +192,7 @@ exports.addToWishlist = async (req, res) => {
 
     await userModel.updateOne(
       { _id: req.user.userId },
-      { $push: { wishlist: productId } }
+      { $push: { wishlist: productId } },
     );
     return res.status(200).json({ message: "Product added to wishlist" });
   } catch (error) {
@@ -210,7 +211,7 @@ exports.removeFromWishlist = async (req, res) => {
     }
     await userModel.updateOne(
       { _id: req.user.userId },
-      { $pull: { wishlist: productId } }
+      { $pull: { wishlist: productId } },
     );
     return res.status(200).json({ message: "Product removed from wishlist" });
   } catch (error) {
@@ -224,7 +225,7 @@ exports.getWishlist = async (req, res) => {
   try {
     const { wishlist } = await userModel.findOne(
       { _id: req.user.userId },
-      "wishlist"
+      "wishlist",
     );
     let wishlistData = wishlist.map(async (product) => {
       const productData = await Product.findOne({ _id: product });

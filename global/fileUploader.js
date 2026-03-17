@@ -11,7 +11,7 @@ exports.uploadFile = async (file, user) => {
       Bucket: process.env.AWS_BUCKET,
       Key: `profiles/${user}/${uuid()}-${file.originalname}`,
       Body: file.buffer,
-      ACL: 'public-read',
+      // ACL: 'public-read',
     }
     return s3.upload(params).promise()
   } catch (err) {
@@ -29,7 +29,7 @@ exports.horoscopeUpload = async (file, id) => {
       Bucket: process.env.AWS_BUCKET,
       Key: `horoscope/${id}/${uuid()}-${file.originalname}`,
       Body: file.buffer,
-      ACL: 'public-read',
+      // ACL: 'public-read',
     }
     return s3.upload(params).promise()
   } catch (err) {
@@ -48,7 +48,7 @@ exports.imageUpload = async (file, id) => {
       Bucket: process.env.AWS_BUCKET,
       Key: `images/${id}/${uuid()}-${file.originalname}`,
       Body: file.buffer,
-      ACL: 'public-read',
+      // ACL: 'public-read',
     }
     return s3.upload(params).promise()
   } catch (err) {
@@ -66,7 +66,7 @@ exports.globalImageUploader = async (file, id, path) => {
       Bucket: process.env.AWS_BUCKET,
       Key: `${path}/${id}/${file.originalname}`,
       Body: file.buffer,
-      ACL: 'public-read',
+      // ACL: 'public-read',
     }
     return s3.upload(params).promise()
   } catch (error) {

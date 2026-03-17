@@ -3,7 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var cookieParser = require("cookie-parser");
-var cors = require('cors');
+var cors = require("cors");
 var logger = require("morgan");
 var multer = require("multer");
 
@@ -23,12 +23,12 @@ const jyotisRouter = require("./routes/jyotis");
 const appointmentRouter = require("./routes/appointment");
 const horoscopeRouter = require("./routes/horoscope");
 const cardRouter = require("./routes/card");
-const planRouter = require("./routes/plan"); 
+const planRouter = require("./routes/plan");
 const subscriptionRouter = require("./routes/subscription");
 const galleryRouter = require("./routes/gallery");
 const feedback = require("./routes/feedback");
-const auth = require('./middlewares/auth');
-const kundaliRouter = require('./routes/kundali');
+const auth = require("./middlewares/auth");
+const kundaliRouter = require("./routes/kundali");
 
 dbConnection();
 var app = express();
@@ -45,47 +45,51 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer().any());
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  }),
+);
 
 // Request Logger
 if (app.get("env") === "development") {
   app.use(logger("dev"));
 }
 
-
 // Place your routes here
 app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/category", categoryRouter);
 // app.use("/api/sub-category", subCategoryRouter);
-app.use('/api/products', productRouter);
-app.use('/api/payment', paymentRouter);
-app.use('/api/order', orderRouter);
-app.use('/api/cart', cartRouter);
-app.use('/api/jyotis', jyotisRouter);
-app.use('/api/appointment', appointmentRouter);
-app.use('/api/horoscope', horoscopeRouter);
-app.use('/api/card', cardRouter);
-app.use('/api/plan', planRouter);
-app.use('/api/subscription', subscriptionRouter);
-app.use('/api/gallery', galleryRouter);
-app.use('/api/cms',feedback);
-app.use('/api/kundali',kundaliRouter);
+app.use("/api/products", productRouter);
+app.use("/api/payment", paymentRouter);
+app.use("/api/order", orderRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/jyotis", jyotisRouter);
+app.use("/api/appointment", appointmentRouter);
+app.use("/api/horoscope", horoscopeRouter);
+app.use("/api/card", cardRouter);
+app.use("/api/plan", planRouter);
+app.use("/api/subscription", subscriptionRouter);
+app.use("/api/gallery", galleryRouter);
+app.use("/api/cms", feedback);
+app.use("/api/kundali", kundaliRouter);
 
-app.get('/api/check-auth',auth.authenticateToken,async(req,res)=>{
-    try{
-        return res.status(200).json({message:"Token is valid"});
-    }catch(err){
-        console.error(err);
-        return res.status(500).json({message:err.message});
-    }
-})
+app.get("/api/check-auth", auth.authenticateToken, async (req, res) => {
+  try {
+    return res.status(200).json({ message: "Token is valid" });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: err.message });
+  }
+});
 
 // Health check
 app.get("/health-check", (req, res) => {
   res.status(200).json({ message: "Server is running" });
 });
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
